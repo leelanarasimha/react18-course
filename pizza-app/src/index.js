@@ -73,7 +73,7 @@ function Menu() {
 
       <ul className="pizzas">
         {pizzaData.map((pizza) => (
-          <Pizza pizzaObj={pizza} />
+          <Pizza pizzaObj={pizza} key={pizza.name} />
         ))}
       </ul>
       {/* <Pizza
@@ -106,7 +106,20 @@ function Pizza(props) {
 }
 
 function Footer() {
-  return <div>Open Today</div>;
+  const currentHour = new Date().getHours();
+  const openHour = 12;
+  const closedHour = 22;
+  const isOpen = currentHour >= openHour && currentHour <= closedHour;
+  console.log(isOpen);
+
+  return (
+    isOpen && (
+      <div className="order">
+        <p>We are open until {closedHour}:00. Come and visit us or order online</p>
+        <button className="btn">Order</button>
+      </div>
+    )
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

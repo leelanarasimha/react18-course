@@ -74,3 +74,20 @@ body {
   display: block;
   font-size: 1.6rem;
 }
+
+.order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+.btn {
+  color: inherit;
+  font-family: inherit;
+  border: none;
+  font-size: 1.4rem;
+  background-color: #edc84b;
+  padding: 1.4rem 3.2rem;
+  cursor: pointer;
+}
