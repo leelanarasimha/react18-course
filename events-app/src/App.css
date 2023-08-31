@@ -6,6 +6,7 @@ body {
   font-family: sans-serif;
   color: #333;
 }
+
 .steps {
   width: 600px;
   background-color: #f7f7f7;
@@ -33,7 +34,7 @@ body {
 .message {
   text-align: center;
   font-size: 20px;
-  margin: 40px 0px;
+  margin: 40px 0;
   font-weight: bold;
 }
 
@@ -48,5 +49,5 @@ body {
   padding: 10px 15px;
   border-radius: 100px;
   font-size: 14px;
-  font-weight: bolder;
+  font-weight: bold;
 }
