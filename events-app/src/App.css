@@ -51,3 +51,8 @@ body {
   font-size: 14px;
   font-weight: bold;
 }
+
+.numbers .active {
+  background-color: #7950f2;
+  color: #fff;
+}
