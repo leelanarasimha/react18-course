@@ -56,3 +56,11 @@ body {
   background-color: #7950f2;
   color: #fff;
 }
+
+.close {
+  text-align: end;
+  margin: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
