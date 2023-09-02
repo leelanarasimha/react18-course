@@ -1,3 +1,3 @@
 export default function Header() {
-  return <div>This is Header</div>;
+  return <div className="header">Grocery List</div>;
 }
