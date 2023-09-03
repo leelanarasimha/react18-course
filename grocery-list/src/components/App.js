@@ -32,7 +32,7 @@ function App() {
         <AddItem addItem={addItem} />
         <ItemsList items={items} deleteItem={deleteItem} itemSelected={onItemSelected} />
       </div>
-      <Footer />
+      <Footer items={items} />
     </div>
   );
 }

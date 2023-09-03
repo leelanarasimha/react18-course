@@ -8,7 +8,7 @@ export default function AddItem({ addItem }) {
   function onAddItemSubmit(e) {
     e.preventDefault();
     if (name === '') return;
-    const item = { name, quantity, price, id: Date.now(), selected: true };
+    const item = { name, quantity, price, id: Date.now(), selected: false };
     console.log(item);
     addItem(item);
     setName('');
