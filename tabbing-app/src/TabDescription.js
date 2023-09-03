@@ -1,3 +1,3 @@
-export default function TabDescription() {
-  return <div className="description">Hello world</div>;
+export default function TabDescription({ children }) {
+  return <div className="description">{children}</div>;
 }

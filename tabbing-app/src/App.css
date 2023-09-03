@@ -25,6 +25,10 @@ body {
   cursor: pointer;
 }
 
+div.heading.active {
+  background-color: white;
+}
+
 .description {
   padding: 2rem;
   font-size: 16px;

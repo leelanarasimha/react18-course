@@ -9,14 +9,31 @@ function App() {
     { title: 'tab 2', description: 'tab2 description' },
     { title: 'tab 3', description: 'tab3 description' }
   ]);
+
+  const [currTab, setCurrTab] = useState(3);
+
+  const description = tabsData[currTab - 1].description;
+
+  function onTabSelected(tabIndex) {
+    setCurrTab(tabIndex + 1);
+  }
+
   return (
     <div className="tabs">
-      <div class="tab-headings">
-        {tabsData.map((tab) => (
-          <Tab tab={tab} />
+      <div className="tab-headings">
+        {tabsData.map((tab, index) => (
+          <Tab
+            tab={tab}
+            tabIndex={index}
+            currTab={currTab - 1}
+            key={tab.title}
+            onTabSelected={onTabSelected}
+          />
         ))}
       </div>
-      <TabDescription />
+      <TabDescription>
+        <div>{description}</div>
+      </TabDescription>
     </div>
   );
 }
