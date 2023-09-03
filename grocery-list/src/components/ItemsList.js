@@ -1,13 +1,12 @@
 import SingleItem from './SingleItem';
 
-export default function ItemsList() {
+export default function ItemsList({ items }) {
   return (
     <div>
       <h3>Items List</h3>
-      <SingleItem />
-      <SingleItem />
-      <SingleItem />
-      <SingleItem />
+      {items.map((item) => (
+        <SingleItem item={item} key={item.id} />
+      ))}
     </div>
   );
 }
