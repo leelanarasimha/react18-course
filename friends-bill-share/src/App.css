@@ -33,3 +33,9 @@ form label {
   background-color: lightcoral;
   color: white;
 }
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}

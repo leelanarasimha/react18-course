@@ -13,8 +13,8 @@ function App() {
   return (
     <div className="container">
       <AddFriend onAddFriend={addFriend} />
-      <BillShare />
-      <FriendsList />
+      <BillShare friends={friends} />
+      <FriendsList friends={friends} />
     </div>
   );
 }

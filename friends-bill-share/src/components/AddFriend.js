@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from './Button';
 
 export default function AddFriend({ onAddFriend }) {
   const [name, setName] = useState('');
@@ -6,6 +7,7 @@ export default function AddFriend({ onAddFriend }) {
   function addFriend(event) {
     event.preventDefault();
     onAddFriend(name);
+    setName('');
   }
   return (
     <div>
@@ -17,7 +19,7 @@ export default function AddFriend({ onAddFriend }) {
         </div>
 
         <div>
-          <button className="btn">Add Friend</button>
+          <Button>Add Friend</Button>
         </div>
       </form>
     </div>
