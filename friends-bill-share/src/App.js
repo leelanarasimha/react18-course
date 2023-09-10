@@ -12,8 +12,45 @@ function App() {
   }
 
   function onBillPaid(billDetails) {
-    console.log(billDetails);
+    setFriends((friends) => calculateBill(friends, billDetails));
   }
+
+  function calculateBill(friends, billDetails) {
+    const amountPrice = Math.round(+billDetails.bill / friends.length);
+    const friendDetails = [];
+
+    for (let friend of friends) {
+      const singleFriend = { ...friend };
+      if (singleFriend.id === +billDetails.friendId) {
+        friendDetails.push(singleFriend);
+        continue;
+      }
+
+      const billings = [];
+      let found = false;
+
+      if (singleFriend.billDetails.length) {
+        for (var billing of singleFriend.billDetails) {
+          if (billing.id === billDetails.friendId) {
+            found = true;
+            billings.push({ ...billing, ...{ price: billing.price + amountPrice } });
+          } else {
+            billings.push(billing);
+          }
+        }
+      }
+
+      if (!found) {
+        billings.push({ id: billDetails.friendId, name: billDetails.name, price: +amountPrice });
+      }
+
+      singleFriend['billDetails'] = billings;
+      friendDetails.push(singleFriend);
+    }
+
+    return friendDetails;
+  }
+
   return (
     <div className="container">
       <AddFriend onAddFriend={addFriend} />
