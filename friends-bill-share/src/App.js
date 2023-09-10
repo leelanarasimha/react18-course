@@ -10,10 +10,14 @@ function App() {
   function addFriend(name) {
     setFriends((friends) => [...friends, { id: Date.now(), name, billDetails: [] }]);
   }
+
+  function onBillPaid(billDetails) {
+    console.log(billDetails);
+  }
   return (
     <div className="container">
       <AddFriend onAddFriend={addFriend} />
-      <BillShare friends={friends} />
+      <BillShare friends={friends} onBillPaid={onBillPaid} />
       <FriendsList friends={friends} />
     </div>
   );
