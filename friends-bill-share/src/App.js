@@ -1,11 +1,13 @@
 import './App.css';
 import AddFriend from './components/AddFriend';
+import BillDetails from './components/BillDetails';
 import BillShare from './components/BillShare';
 import FriendsList from './components/FriendsList';
 import { useState } from 'react';
 
 function App() {
   const [friends, setFriends] = useState([]);
+  const [selectedFriend, setSelectedFriend] = useState('');
 
   function addFriend(name) {
     setFriends((friends) => [...friends, { id: Date.now(), name, billDetails: [] }]);
@@ -13,6 +15,10 @@ function App() {
 
   function onBillPaid(billDetails) {
     setFriends((friends) => calculateBill(friends, billDetails));
+  }
+
+  function onFriendSelected(friend) {
+    setSelectedFriend(friend);
   }
 
   function calculateBill(friends, billDetails) {
@@ -55,7 +61,8 @@ function App() {
     <div className="container">
       <AddFriend onAddFriend={addFriend} />
       <BillShare friends={friends} onBillPaid={onBillPaid} />
-      <FriendsList friends={friends} />
+      <FriendsList friends={friends} selectedFriend={onFriendSelected} />
+      {selectedFriend && <BillDetails friend={selectedFriend} />}
     </div>
   );
 }
