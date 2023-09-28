@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+.navbar {
+  background-color: purple;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+}
+
+.main {
+  width: 90%;
+  margin: auto;
+}
