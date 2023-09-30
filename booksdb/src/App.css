@@ -70,3 +70,27 @@ ul.books-list {
 .justify-content-between {
   justify-content: space-between;
 }
+
+.books-read-list {
+  margin: 0px;
+  list-style: none;
+  padding: 10px;
+}
+
+.books-read-list img {
+  width: 50px;
+}
+
+.books-read-list h3 {
+  margin: 0px;
+  font-size: 12px;
+}
+
+.books-read-list li {
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
