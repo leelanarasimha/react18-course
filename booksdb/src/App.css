@@ -2,8 +2,10 @@
   box-sizing: border-box;
 }
 
-html {
+html,
+body {
   font-size: 16px;
+  font-family: sans-serif;
 }
 
 .navbar {
@@ -18,4 +20,31 @@ html {
 .main {
   width: 90%;
   margin: auto;
+}
+
+.box {
+  box-shadow: 1px 1px 3px 4px #eee;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+ul.books-list {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+
+.book {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.book img {
+  width: 50px;
+}
+
+.book h3 {
+  margin: 0px;
+  font-size: 18px;
 }
