@@ -94,3 +94,8 @@ ul.books-list {
 .justify-content-around {
   justify-content: space-around;
 }
+
+.btn-toggle {
+  background-color: transparent;
+  border: none;
+}
