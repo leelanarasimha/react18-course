@@ -4,7 +4,7 @@
 
 html,
 body {
-  font-size: 16px;
+  font-size: 12px;
   font-family: sans-serif;
 }
 
@@ -20,16 +20,17 @@ body {
 .main {
   width: 90%;
   margin: auto;
+  gap: 10px;
 }
 
 .box {
   box-shadow: 1px 1px 3px 4px #eee;
-  padding: 10px;
+
   margin-top: 20px;
 }
 
 ul.books-list {
-  padding: 0px;
+  padding: 10px;
   margin: 0px;
   list-style: none;
 }
@@ -46,5 +47,26 @@ ul.books-list {
 
 .book h3 {
   margin: 0px;
-  font-size: 18px;
+  font-size: 12px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.main > div {
+  flex: 1;
+}
+
+.books-summary {
+  background-color: #eee;
+  padding: 10px;
+}
+
+.books-summary h3 {
+  margin: 0px;
+}
+
+.justify-content-between {
+  justify-content: space-between;
 }
