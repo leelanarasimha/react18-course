@@ -2,6 +2,12 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Main from './components/Main';
 import { useState } from 'react';
+import NumResults from './components/NumResults';
+import ListBox from './components/ListBox';
+import BooksList from './components/BooksList';
+import StudiedList from './components/StudiedList';
+import BooksReadSummary from './components/BooksReadSummary';
+import BooksReadList from './components/BooksReadList';
 
 const Books = [
   {
@@ -81,8 +87,18 @@ function App() {
   const [booksReadData, setBooksReadData] = useState(BooksRead);
   return (
     <>
-      <NavBar />
-      <Main booksData={booksData} booksRead={booksReadData} />
+      <NavBar>
+        <NumResults books={booksData} />
+      </NavBar>
+      <Main>
+        <ListBox>
+          <BooksList booksData={booksData} />
+        </ListBox>
+        <StudiedList>
+          <BooksReadSummary />
+          <BooksReadList booksRead={booksReadData} />
+        </StudiedList>
+      </Main>
     </>
   );
 }

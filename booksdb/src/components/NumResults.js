@@ -1,3 +1,3 @@
-export default function NumResults() {
-  return <div>Found X Results</div>;
+export default function NumResults({ books }) {
+  return <div>Found {books.length} Results</div>;
 }
