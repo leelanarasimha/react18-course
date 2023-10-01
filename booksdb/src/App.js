@@ -5,7 +5,6 @@ import { useState } from 'react';
 import NumResults from './components/NumResults';
 import ListBox from './components/ListBox';
 import BooksList from './components/BooksList';
-import StudiedList from './components/StudiedList';
 import BooksReadSummary from './components/BooksReadSummary';
 import BooksReadList from './components/BooksReadList';
 
@@ -94,10 +93,10 @@ function App() {
         <ListBox>
           <BooksList booksData={booksData} />
         </ListBox>
-        <StudiedList>
+        <ListBox>
           <BooksReadSummary />
           <BooksReadList booksRead={booksReadData} />
-        </StudiedList>
+        </ListBox>
       </Main>
     </>
   );
