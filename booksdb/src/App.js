@@ -10,6 +10,7 @@ import BooksReadList from './components/BooksReadList';
 import { FormatBookResponse } from './services/FormatBookResponse';
 import Loader from './components/Loader';
 import ErrorMessage from './components/ErrorMessage';
+import Search from './components/Search';
 
 const BooksRead = [
   {
@@ -54,11 +55,12 @@ function App() {
   const [booksReadData, setBooksReadData] = useState(BooksRead);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-  const query = 'monk+ferarri';
+  const [query, setQuery] = useState('');
 
   async function fetchPosts() {
     try {
       setIsLoading(true);
+      setError('');
       const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${KEY}`);
       const data = await response.json();
       console.log(data);
@@ -73,12 +75,16 @@ function App() {
   }
 
   useEffect(() => {
+    if (query.length < 4) {
+      return;
+    }
     fetchPosts();
-  }, []);
+  }, [query]);
 
   return (
     <>
       <NavBar>
+        <Search query={query} setQuery={setQuery} />
         <NumResults books={booksData} />
       </NavBar>
       <Main>
