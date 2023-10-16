@@ -12,6 +12,7 @@ export function FormatBookResponse(booksData) {
 export function prepareBookObject(item) {
   let book = {
     id: item.id,
+    subTitle: item.volumeInfo.subtitle,
     title: item.volumeInfo.title,
     isbn: item.volumeInfo.industryIdentifiers[0].identifier,
     image: item.volumeInfo.imageLinks?.thumbnail,
