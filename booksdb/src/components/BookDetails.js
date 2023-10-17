@@ -6,6 +6,7 @@ import StarRating from './StarRating/StarRating';
 export default function BookDetails({ selectedId, handleBack }) {
   const [book, setBook] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [rating, setRating] = useState(0);
 
   async function getBookDetails() {
     setIsLoading(true);
@@ -50,7 +51,9 @@ export default function BookDetails({ selectedId, handleBack }) {
           </div>
           <div>
             <div>Rate Book: </div>
-            <StarRating />
+            <StarRating onSetRating={() => console.log('hi')} />
+            <StarRating maxRating={10} color="#fc4199" defaultRating={5} onSetRating={setRating} />
+            <div>The book has {rating} Star Ratings</div>
           </div>
         </div>
       )}
