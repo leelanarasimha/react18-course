@@ -115,3 +115,7 @@ ul.books-list {
   padding: 0px;
   list-style: none;
 }
+
+.align-items-center {
+  align-items: center;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { prepareBookObject } from '../services/FormatBookResponse';
 import Loader from './Loader';
+import StarRating from './StarRating/StarRating';
 
 export default function BookDetails({ selectedId, handleBack }) {
   const [book, setBook] = useState('');
@@ -30,20 +31,26 @@ export default function BookDetails({ selectedId, handleBack }) {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className="book-details d-flex">
-          <div>
-            <img src={book.image} />
+        <div className="book-details">
+          <div className="d-flex" style={{ gap: '10px' }}>
+            <div>
+              <img src={book.image} />
+            </div>
+
+            <div>
+              <h2>{book.title}</h2>
+              <h3>{book.subTitle}</h3>
+
+              <ul>
+                <li>Year: {book.year}</li>
+                <li>Publisher: {book.publisher}</li>
+                <li>ISBN: {book.isbn}</li>
+              </ul>
+            </div>
           </div>
-
           <div>
-            <h2>{book.title}</h2>
-            <h3>{book.subTitle}</h3>
-
-            <ul>
-              <li>Year: {book.year}</li>
-              <li>Publisher: {book.publisher}</li>
-              <li>ISBN: {book.isbn}</li>
-            </ul>
+            <div>Rate Book: </div>
+            <StarRating />
           </div>
         </div>
       )}
