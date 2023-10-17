@@ -3,10 +3,10 @@ import { prepareBookObject } from '../services/FormatBookResponse';
 import Loader from './Loader';
 import StarRating from './StarRating/StarRating';
 
-export default function BookDetails({ selectedId, handleBack }) {
+export default function BookDetails({ selectedId, handleBack, onBookRead }) {
   const [book, setBook] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [rating, setRating] = useState(0);
+  const [userRating, setUserRating] = useState(0);
 
   async function getBookDetails() {
     setIsLoading(true);
@@ -15,6 +15,11 @@ export default function BookDetails({ selectedId, handleBack }) {
 
     setBook(prepareBookObject(bookDetails));
     setIsLoading(false);
+  }
+
+  function handleReadBook() {
+    onBookRead({ ...book, userRating });
+    handleBack();
   }
 
   useEffect(
@@ -51,10 +56,14 @@ export default function BookDetails({ selectedId, handleBack }) {
           </div>
           <div>
             <div>Rate Book: </div>
-            <StarRating onSetRating={() => console.log('hi')} />
-            <StarRating maxRating={10} color="#fc4199" defaultRating={5} onSetRating={setRating} />
-            <div>The book has {rating} Star Ratings</div>
+            <StarRating maxRating={10} color="#fc4199" onSetRating={setUserRating} />
           </div>
+
+          {userRating > 0 && (
+            <div>
+              <button onClick={handleReadBook}>Add to List</button>
+            </div>
+          )}
         </div>
       )}
     </div>
