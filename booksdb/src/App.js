@@ -38,20 +38,25 @@ function App() {
     setBooksReadData(booksData);
   }
 
+  const controller = new AbortController();
+
   async function fetchPosts() {
     try {
       setIsLoading(true);
       setError('');
-      const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${KEY}`);
+      const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${KEY}`, {
+        signal: controller.signal
+      });
       const data = await response.json();
       console.log(data);
       if (!data.items?.length) throw new Error('No Books Data Available');
       setBooksData(FormatBookResponse(data));
-      setIsLoading(false);
     } catch (error) {
+      if (error.name !== 'AbortError') {
+        setError(error.message);
+      }
+    } finally {
       setIsLoading(false);
-      setError(error.message);
-      console.log(error.message);
     }
   }
 
@@ -60,6 +65,9 @@ function App() {
       return;
     }
     fetchPosts();
+    return () => {
+      controller.abort();
+    };
   }, [query]);
 
   return (
