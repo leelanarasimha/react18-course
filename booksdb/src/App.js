@@ -33,6 +33,10 @@ function App() {
   function handleBack() {
     setSelectedId('');
   }
+  function deleteReadBook(bookId) {
+    let booksData = booksReadData.filter((book) => book.id !== bookId);
+    setBooksReadData(booksData);
+  }
 
   async function fetchPosts() {
     try {
@@ -81,7 +85,7 @@ function App() {
           ) : (
             <>
               <BooksReadSummary books={booksReadData} />
-              <BooksReadList booksRead={booksReadData} />
+              <BooksReadList booksRead={booksReadData} onDeleteBook={deleteReadBook} />
             </>
           )}
         </ListBox>

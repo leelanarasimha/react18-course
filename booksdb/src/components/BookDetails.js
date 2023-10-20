@@ -58,7 +58,7 @@ export default function BookDetails({ selectedId, handleBack, onBookRead, booksR
             </div>
           </div>
           {isRated ? (
-            'You already rated this book'
+            `You already rated this book with ${ratedBook.userRating} stars`
           ) : (
             <div>
               <div>
