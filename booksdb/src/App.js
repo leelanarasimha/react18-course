@@ -65,10 +65,24 @@ function App() {
       return;
     }
     fetchPosts();
+    handleBack();
     return () => {
       controller.abort();
     };
   }, [query]);
+
+  useEffect(() => {
+    function callback(e) {
+      if (e.code === 'Escape') {
+        handleBack();
+        console.log('closing');
+      }
+    }
+    document.addEventListener('keydown', callback);
+    return () => {
+      document.removeEventListener('keydown', callback);
+    };
+  }, [handleBack]);
 
   return (
     <>
