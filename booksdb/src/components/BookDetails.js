@@ -25,12 +25,22 @@ export default function BookDetails({ selectedId, handleBack, onBookRead, booksR
     handleBack();
   }
 
+  //component is mounted && selectedId changes triggred
   useEffect(
     function () {
       getBookDetails();
     },
     [selectedId]
   );
+
+  useEffect(() => {
+    if (!book) return;
+    document.title = `Book - ${book.title}`;
+    return () => {
+      console.log(book.title);
+      document.title = 'Books DB';
+    };
+  }, [book]);
 
   return (
     <div>
