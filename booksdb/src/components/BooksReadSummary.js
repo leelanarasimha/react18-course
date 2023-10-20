@@ -1,4 +1,8 @@
+import { average } from '../services/FormatBookResponse';
+
 export default function BooksReadSummary({ books }) {
+  const rating = average(books.map((book) => +book.rating));
+  const userRating = average(books.map((book) => +book.userRating));
   return (
     <div className="books-summary">
       <h3>Books You Read</h3>
@@ -9,11 +13,11 @@ export default function BooksReadSummary({ books }) {
         </div>
         <div>
           <span>⭐</span>
-          <span>4.5</span>
+          <span>{rating || 0}</span>
         </div>
         <div>
           <span>🌟</span>
-          <span>4.5</span>
+          <span>{userRating || 0} </span>
         </div>
       </div>
     </div>

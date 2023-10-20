@@ -22,3 +22,7 @@ export function prepareBookObject(item) {
   };
   return book;
 }
+
+export function average(arr) {
+  return arr.reduce((acc, curr) => acc + curr, 0) / arr.length;
+}

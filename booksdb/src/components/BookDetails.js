@@ -3,10 +3,13 @@ import { prepareBookObject } from '../services/FormatBookResponse';
 import Loader from './Loader';
 import StarRating from './StarRating/StarRating';
 
-export default function BookDetails({ selectedId, handleBack, onBookRead }) {
+export default function BookDetails({ selectedId, handleBack, onBookRead, booksReadData }) {
   const [book, setBook] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [userRating, setUserRating] = useState(0);
+
+  const isRated = booksReadData.map((book) => book.id).includes(selectedId);
+  const ratedBook = booksReadData.find((book) => book.id === selectedId);
 
   async function getBookDetails() {
     setIsLoading(true);
@@ -54,14 +57,19 @@ export default function BookDetails({ selectedId, handleBack, onBookRead }) {
               </ul>
             </div>
           </div>
-          <div>
-            <div>Rate Book: </div>
-            <StarRating maxRating={10} color="#fc4199" onSetRating={setUserRating} />
-          </div>
-
-          {userRating > 0 && (
+          {isRated ? (
+            'You already rated this book'
+          ) : (
             <div>
-              <button onClick={handleReadBook}>Add to List</button>
+              <div>
+                <div>Rate Book: </div>
+                <StarRating maxRating={10} color="#fc4199" onSetRating={setUserRating} />
+              </div>
+              {userRating > 0 && (
+                <div>
+                  <button onClick={handleReadBook}>Add to List</button>
+                </div>
+              )}
             </div>
           )}
         </div>

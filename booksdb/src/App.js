@@ -72,7 +72,12 @@ function App() {
         </ListBox>
         <ListBox>
           {selectedId ? (
-            <BookDetails selectedId={selectedId} handleBack={handleBack} onBookRead={handleBookRead} />
+            <BookDetails
+              selectedId={selectedId}
+              handleBack={handleBack}
+              onBookRead={handleBookRead}
+              booksReadData={booksReadData}
+            />
           ) : (
             <>
               <BooksReadSummary books={booksReadData} />
