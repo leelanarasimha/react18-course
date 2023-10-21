@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { prepareBookObject } from '../services/FormatBookResponse';
 import Loader from './Loader';
 import StarRating from './StarRating/StarRating';
@@ -7,6 +7,12 @@ export default function BookDetails({ selectedId, handleBack, onBookRead, booksR
   const [book, setBook] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [userRating, setUserRating] = useState(0);
+
+  const countRef = useRef(0);
+
+  useEffect(() => {
+    if (userRating) countRef.current = countRef.current + 1;
+  }, [userRating]);
 
   const isRated = booksReadData.map((book) => book.id).includes(selectedId);
   const ratedBook = booksReadData.find((book) => book.id === selectedId);
@@ -21,7 +27,7 @@ export default function BookDetails({ selectedId, handleBack, onBookRead, booksR
   }
 
   function handleReadBook() {
-    onBookRead({ ...book, userRating });
+    onBookRead({ ...book, userRating, ratingCount: countRef.current });
     handleBack();
   }
 
