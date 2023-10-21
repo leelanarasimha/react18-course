@@ -16,11 +16,16 @@ import BookDetails from './components/BookDetails';
 const KEY = `AIzaSyDd8zjqw7paHROuV-wUP-ZNvUXmGornx0c`;
 function App() {
   const [booksData, setBooksData] = useState([]);
-  const [booksReadData, setBooksReadData] = useState([]);
+
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [query, setQuery] = useState('');
   const [selectedId, setSelectedId] = useState('');
+
+  const [booksReadData, setBooksReadData] = useState(function () {
+    const books = localStorage.getItem('readlist');
+    return JSON.parse(books);
+  });
 
   function handleSelectedId(id) {
     setSelectedId((selectedId) => (id === selectedId ? '' : id));
@@ -37,6 +42,10 @@ function App() {
     let booksData = booksReadData.filter((book) => book.id !== bookId);
     setBooksReadData(booksData);
   }
+
+  useEffect(() => {
+    localStorage.setItem('readlist', JSON.stringify(booksReadData));
+  }, [booksReadData]);
 
   const controller = new AbortController();
 
