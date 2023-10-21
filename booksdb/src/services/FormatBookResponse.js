@@ -17,7 +17,7 @@ export function prepareBookObject(item) {
     isbn: item.volumeInfo.industryIdentifiers[0].identifier,
     image: item.volumeInfo.imageLinks?.thumbnail,
     publisher: item.volumeInfo.publisher,
-    rating: 4.5,
+    rating: Math.floor(Math.random() * 10) + 1,
     year: item.volumeInfo.publishedDate
   };
   return book;
