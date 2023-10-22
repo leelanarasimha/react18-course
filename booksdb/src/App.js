@@ -13,6 +13,7 @@ import ErrorMessage from './components/ErrorMessage';
 import Search from './components/Search';
 import BookDetails from './components/BookDetails';
 import { useBooks } from './services/useBooks';
+import { useLocalStorage } from './services/useLocalStorage';
 
 const KEY = `AIzaSyDd8zjqw7paHROuV-wUP-ZNvUXmGornx0c`;
 function App() {
@@ -20,11 +21,7 @@ function App() {
   const [selectedId, setSelectedId] = useState('');
 
   const { isLoading, error, booksData } = useBooks(query, handleBack);
-
-  const [booksReadData, setBooksReadData] = useState(function () {
-    const books = localStorage.getItem('readlist');
-    return JSON.parse(books);
-  });
+  const [booksReadData, setBooksReadData] = useLocalStorage([], 'readlist');
 
   function handleSelectedId(id) {
     setSelectedId((selectedId) => (id === selectedId ? '' : id));
@@ -41,10 +38,6 @@ function App() {
     let booksData = booksReadData.filter((book) => book.id !== bookId);
     setBooksReadData(booksData);
   }
-
-  useEffect(() => {
-    localStorage.setItem('readlist', JSON.stringify(booksReadData));
-  }, [booksReadData]);
 
   useEffect(() => {
     function callback(e) {
