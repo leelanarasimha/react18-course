@@ -1,0 +1,92 @@
+{
+  "questions": [
+    {
+      "question": "What is the largest planet in our solar system?",
+      "options": ["Mars", "Earth", "Jupiter", "Saturn"],
+      "correctAnswer": "Jupiter",
+      "points": 10
+    },
+    {
+      "question": "Which gas do plants absorb from the atmosphere during photosynthesis?",
+      "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+      "correctAnswer": "Carbon Dioxide",
+      "points": 10
+    },
+    {
+      "question": "Who wrote the play 'Romeo and Juliet'?",
+      "options": ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
+      "correctAnswer": "William Shakespeare",
+      "points": 10
+    },
+    {
+      "question": "What is the chemical symbol for gold?",
+      "options": ["Go", "Au", "Ag", "Ge"],
+      "correctAnswer": "Au",
+      "points": 10
+    },
+    {
+      "question": "Which continent is the driest and the hottest on Earth?",
+      "options": ["Antarctica", "Africa", "Australia", "Asia"],
+      "correctAnswer": "Africa",
+      "points": 10
+    },
+    {
+      "question": "In which year did Christopher Columbus first reach the Americas?",
+      "options": ["1492", "1588", "1776", "1620"],
+      "correctAnswer": "1492",
+      "points": 10
+    },
+    {
+      "question": "What is the largest mammal on land?",
+      "options": ["African Elephant", "Giraffe", "Hippopotamus", "Rhinoceros"],
+      "correctAnswer": "African Elephant",
+      "points": 10
+    },
+    {
+      "question": "Which gas makes up the majority of Earth's atmosphere?",
+      "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Methane"],
+      "correctAnswer": "Nitrogen"
+    },
+    {
+      "question": "What is the smallest prime number?",
+      "options": ["0", "1", "2", "3"],
+      "correctAnswer": "2",
+      "points": 10
+    },
+    {
+      "question": "What is the world's largest ocean?",
+      "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+      "correctAnswer": "Pacific Ocean",
+      "points": 10
+    },
+    {
+      "question": "Which planet is often referred to as the 'Morning Star' or 'Evening Star'?",
+      "options": ["Venus", "Mars", "Jupiter", "Saturn"],
+      "correctAnswer": "Venus",
+      "points": 10
+    },
+    {
+      "question": "What is the chemical symbol for water?",
+      "options": ["Wa", "H2O", "Ag", "Co"],
+      "correctAnswer": "H2O"
+    },
+    {
+      "question": "Who is the author of 'The Great Gatsby'?",
+      "options": ["F. Scott Fitzgerald", "Ernest Hemingway", "Mark Twain", "Jane Austen"],
+      "correctAnswer": "F. Scott Fitzgerald",
+      "points": 10
+    },
+    {
+      "question": "Which country is known as the Land of the Rising Sun?",
+      "options": ["China", "South Korea", "Japan", "Vietnam"],
+      "correctAnswer": "Japan",
+      "points": 10
+    },
+    {
+      "question": "What is the largest desert in the world?",
+      "options": ["Sahara Desert", "Arabian Desert", "Gobi Desert", "Antarctica"],
+      "correctAnswer": "Antarctica",
+      "points": 10
+    }
+  ]
+}

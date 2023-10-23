@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #eee;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.header {
+  text-align: center;
+  color: #fc23fc;
+  font-size: 2rem;
+}
