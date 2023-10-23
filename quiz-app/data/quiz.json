@@ -45,7 +45,8 @@
     {
       "question": "Which gas makes up the majority of Earth's atmosphere?",
       "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Methane"],
-      "correctAnswer": "Nitrogen"
+      "correctAnswer": "Nitrogen",
+      "points": 10
     },
     {
       "question": "What is the smallest prime number?",
@@ -68,7 +69,8 @@
     {
       "question": "What is the chemical symbol for water?",
       "options": ["Wa", "H2O", "Ag", "Co"],
-      "correctAnswer": "H2O"
+      "correctAnswer": "H2O",
+      "points": 10
     },
     {
       "question": "Who is the author of 'The Great Gatsby'?",
