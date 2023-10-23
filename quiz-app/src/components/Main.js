@@ -1,3 +1,3 @@
-export default function Main() {
-  return <div>Main COmponent</div>;
+export default function Main({ children }) {
+  return <div>{children}</div>;
 }
