@@ -10,7 +10,8 @@ import Question from './components/Question';
 const initialState = {
   questions: [],
   status: 'loading', //loading, ready, error, active, finished
-  index: 0
+  index: 0,
+  newAnswer: null
 };
 
 function reducer(state, action) {
@@ -22,11 +23,13 @@ function reducer(state, action) {
       return { ...state, status: 'error' };
     case 'start':
       return { ...state, status: 'active' };
+    case 'newAnswer':
+      return { ...state, newAnswer: action.payload };
   }
 }
 
 function App() {
-  const [{ status, questions, index }, dispatch] = useReducer(reducer, initialState);
+  const [{ status, questions, index, newAnswer }, dispatch] = useReducer(reducer, initialState);
 
   const questionsCount = questions.length;
   useEffect(() => {
@@ -42,7 +45,9 @@ function App() {
         {status === 'loading' && <Loader />}
         {status === 'error' && <Error />}
         {status === 'ready' && <StartScreen questionsCount={questionsCount} dispatch={dispatch} />}
-        {status === 'active' && <Question question={questions[index]} />}
+        {status === 'active' && (
+          <Question question={questions[index]} dispatch={dispatch} newAnswer={newAnswer} />
+        )}
       </Main>
     </div>
   );

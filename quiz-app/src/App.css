@@ -72,3 +72,11 @@ body {
 .btn-option:hover {
   background-color: aquamarine;
 }
+
+.correct {
+  background-color: lightgreen;
+}
+
+.wrong {
+  background-color: red;
+}
