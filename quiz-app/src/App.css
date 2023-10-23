@@ -61,3 +61,14 @@ body {
   color: #fff;
   font-weight: bold;
 }
+
+.btn-option {
+  width: 100%;
+  background-color: bisque;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.btn-option:hover {
+  background-color: aquamarine;
+}
