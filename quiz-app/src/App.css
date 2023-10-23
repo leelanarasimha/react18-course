@@ -80,3 +80,11 @@ body {
 .wrong {
   background-color: red;
 }
+
+.finish {
+  text-align: center;
+  font-weight: bold;
+  background-color: aquamarine;
+  padding: 10px;
+  border-radius: 20px;
+}
