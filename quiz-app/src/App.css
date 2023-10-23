@@ -39,3 +39,25 @@ body {
 .loading {
   text-align: center;
 }
+
+.error {
+  text-align: center;
+  background-color: #ddd;
+  padding: 10px;
+}
+
+.welcome-page {
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.start-btn {
+  background-color: #2a2a2a;
+  color: #fff;
+  font-weight: bold;
+}
