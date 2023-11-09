@@ -23,3 +23,11 @@ body {
   display: inline-block;
   padding: 5px;
 }
+
+#container {
+  display: flex;
+  gap: 1rem;
+}
+#contact {
+  padding: 10px;
+}
