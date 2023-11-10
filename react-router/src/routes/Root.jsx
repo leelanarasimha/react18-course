@@ -1,9 +1,14 @@
-import { Link, Outlet, useLoaderData } from 'react-router-dom';
-import { getContacts } from '../contacts';
+import { Form, Link, Outlet, useLoaderData } from 'react-router-dom';
+import { createContact, getContacts } from '../contacts';
 
 export async function loader() {
   let contacts = await getContacts();
   return { contacts };
+}
+
+export async function action() {
+  const contact = await createContact();
+  return { contact };
 }
 
 export default function Root() {
@@ -13,8 +18,15 @@ export default function Root() {
     <>
       <div id="container">
         <div id="sidebar">
-          <div>
-            <input type="text" placeholder="Search" />
+          <div className="search-box">
+            <div>
+              <input type="text" placeholder="Search" />
+            </div>
+            <div>
+              <Form method="post">
+                <button>New</button>
+              </Form>
+            </div>
           </div>
 
           <div>

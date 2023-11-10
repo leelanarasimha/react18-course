@@ -31,3 +31,8 @@ body {
 #contact {
   padding: 10px;
 }
+
+.search-box {
+  display: flex;
+  align-items: center;
+}
