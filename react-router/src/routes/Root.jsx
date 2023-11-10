@@ -1,5 +1,14 @@
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet, useLoaderData } from 'react-router-dom';
+import { getContacts } from '../contacts';
+
+export async function loader() {
+  let contacts = await getContacts();
+  return { contacts };
+}
+
 export default function Root() {
+  let { contacts } = useLoaderData();
+  console.log(contacts);
   return (
     <>
       <div id="container">
@@ -9,17 +18,19 @@ export default function Root() {
           </div>
 
           <div>
-            <ul className="names-list">
-              <li>
-                <a href={'/contacts/1'}>Your Name</a>
-              </li>
-              <li>
-                <a href={'/contacts/2'}>Your Friend</a>
-              </li>
-              <li>
-                <a href={'/contacts/100'}>Your Friend</a>
-              </li>
-            </ul>
+            {contacts.length ? (
+              <ul className="names-list">
+                {contacts.map((contact) => (
+                  <li key={contact.id}>
+                    <Link to={`contacts/${contact.id}`}>
+                      {contact.first} {contact.last}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>No Contacts</p>
+            )}
           </div>
         </div>
         <div id="detail">
