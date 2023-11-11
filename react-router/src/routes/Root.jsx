@@ -13,7 +13,7 @@ export async function action() {
 
 export default function Root() {
   let { contacts } = useLoaderData();
-  console.log(contacts);
+
   return (
     <>
       <div id="container">

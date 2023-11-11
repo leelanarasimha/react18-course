@@ -19,3 +19,10 @@ export async function createContact() {
   localStorage.setItem('contacts', JSON.stringify(contacts));
   return contact;
 }
+
+export async function getContact(contactId) {
+  await fakeNetwork();
+  let contacts = await getContacts();
+  let contact = contacts.find((contact) => contact.id === contactId);
+  return contact;
+}
