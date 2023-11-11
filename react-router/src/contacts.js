@@ -26,3 +26,13 @@ export async function getContact(contactId) {
   let contact = contacts.find((contact) => contact.id === contactId);
   return contact;
 }
+
+export async function updateContact(contactId, updates) {
+  await fakeNetwork();
+  let contacts = await getContacts();
+  let contact = contacts.find((contact) => contact.id === contactId);
+  if (!contact) throw new Error('No contact found for the id');
+  Object.assign(contact, updates);
+  localStorage.setItem('contacts', JSON.stringify(contacts));
+  return contact;
+}
