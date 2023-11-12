@@ -40,3 +40,12 @@ body {
 #sidebar input {
   width: 100%;
 }
+
+#sidebar nav a.active {
+  background-color: blue;
+  color: white;
+}
+
+#sidebar nav a.pending {
+  background-color: lightblue;
+}
