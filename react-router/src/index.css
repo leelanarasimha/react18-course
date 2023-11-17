@@ -49,3 +49,8 @@ body {
 #sidebar nav a.pending {
   background-color: lightblue;
 }
+
+#detail.loading {
+  opacity: 0.5;
+  transition: opacity 0.5s;
+}

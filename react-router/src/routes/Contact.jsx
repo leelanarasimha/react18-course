@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom';
+import { Form, useLoaderData } from 'react-router-dom';
 import { getContact } from '../contacts';
 
 export async function loader({ params }) {
@@ -35,8 +35,12 @@ export default function Contact() {
         <p>{contact.notes}</p>
 
         <div>
-          <button>Edit</button>&nbsp;
-          <button>Delete</button>
+          <Form action="edit">
+            <button>Edit</button>&nbsp;
+          </Form>
+          <Form action="destroy" method="post">
+            <button>Delete</button>
+          </Form>
         </div>
       </div>
     </div>
