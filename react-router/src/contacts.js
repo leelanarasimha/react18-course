@@ -1,8 +1,14 @@
-export async function getContacts() {
+import { matchSorter } from 'match-sorter';
+export async function getContacts(search) {
   await fakeNetwork();
   let contacts = localStorage.getItem('contacts');
   if (!contacts) contacts = [];
-  else contacts = JSON.parse(contacts);
+  else {
+    contacts = JSON.parse(contacts);
+    if (search) {
+      contacts = matchSorter(contacts, search, { keys: ['first', 'last'] });
+    }
+  }
   return contacts;
 }
 
