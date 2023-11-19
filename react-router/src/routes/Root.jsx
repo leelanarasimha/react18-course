@@ -29,8 +29,9 @@ export default function Root() {
   }, [q]);
 
   function onSearch(event) {
+    const isFirstSearch = q === null;
     setQuery(event.target.value);
-    submit(event.currentTarget.form);
+    submit(event.currentTarget.form, { replace: !isFirstSearch });
   }
 
   return (

@@ -7,6 +7,11 @@ export async function loader({ params }) {
   return { contact };
 }
 
+export async function favoriteAction({ request }) {
+  console.log(request);
+  return 'hi';
+}
+
 export default function Contact() {
   const contactDetails = useLoaderData();
 
@@ -32,6 +37,9 @@ export default function Contact() {
         <img src={contact.avatar} />
       </div>
       <div>
+        <Favorite contact={contact} />
+      </div>
+      <div>
         <h1>
           {contact.first} {contact.last}
         </h1>
@@ -50,5 +58,16 @@ export default function Contact() {
         </div>
       </div>
     </div>
+  );
+}
+
+export function Favorite({ contact }) {
+  let favorite = contact.favorite;
+  return (
+    <Form method="post">
+      <button name="favorite" value={favorite ? 'false' : 'true'}>
+        {favorite ? '★' : '☆'}
+      </button>
+    </Form>
   );
 }
