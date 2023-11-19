@@ -1,12 +1,13 @@
 import { Form, NavLink, Outlet, useLoaderData, useNavigation } from 'react-router-dom';
 import { createContact, getContacts } from '../contacts';
+import { useEffect, useState } from 'react';
 
 export async function loader({ request }) {
   const url = new URL(request.url);
   const q = url.searchParams.get('q');
 
   let contacts = await getContacts(q);
-  return { contacts };
+  return { contacts, q };
 }
 
 export async function action() {
@@ -15,8 +16,18 @@ export async function action() {
 }
 
 export default function Root() {
-  let { contacts } = useLoaderData();
+  let { contacts, q } = useLoaderData();
+  const [query, setQuery] = useState(q);
   const navigation = useNavigation();
+
+  useEffect(() => {
+    //document.getElementById('search').value = q;
+    setQuery(q);
+  }, [q]);
+
+  function onSearch(event) {
+    setQuery(event.target.value);
+  }
 
   return (
     <>
@@ -25,7 +36,14 @@ export default function Root() {
           <div className="search-box">
             <div>
               <Form>
-                <input type="search" placeholder="Search" name="q" />
+                <input
+                  type="search"
+                  id="search"
+                  placeholder="Search"
+                  name="q"
+                  value={query}
+                  onChange={onSearch}
+                />
               </Form>
             </div>
             <div>
