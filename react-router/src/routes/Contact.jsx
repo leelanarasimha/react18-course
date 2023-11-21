@@ -3,6 +3,9 @@ import { getContact, updateContact } from '../contacts';
 
 export async function loader({ params }) {
   let contact = await getContact(params.contactId);
+  if (!contact) {
+    throw new Error('no contact found');
+  }
   console.log(contact);
   return { contact };
 }
@@ -66,6 +69,9 @@ export default function Contact() {
 export function Favorite({ contact }) {
   let favorite = contact.favorite;
   let fetcher = useFetcher();
+  if (fetcher.formData) {
+    favorite = fetcher.formData.get('favorite') === 'true';
+  }
   return (
     <fetcher.Form method="post">
       <button name="favorite" value={favorite ? 'false' : 'true'}>
