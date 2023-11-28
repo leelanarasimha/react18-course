@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 10px 20px;
+  text-align: center;
+  color: white;
+}
+
+.LabelContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Label {
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.FormContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

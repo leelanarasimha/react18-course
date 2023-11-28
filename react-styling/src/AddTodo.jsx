@@ -1,19 +1,19 @@
-import { Container, FormContainer, Header, Label, LabelContainer } from './styles';
+import styles from './main.module.css';
 
 export default function AddTodo() {
   return (
-    <Container>
-      <Header>TODO</Header>
+    <div className={styles.container}>
+      <h2 className={styles.header}>TODO</h2>
 
-      <LabelContainer>
-        <Label>What needs to be Done?</Label>
-      </LabelContainer>
-      <FormContainer>
+      <div className={styles.LabelContainer}>
+        <label className={styles.Label}>What needs to be Done?</label>
+      </div>
+      <div className={styles.FormContainer}>
         <form>
           <input type="text" />
           <button>Add</button>
         </form>
-      </FormContainer>
-    </Container>
+      </div>
+    </div>
   );
 }
