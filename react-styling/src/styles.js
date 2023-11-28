@@ -6,10 +6,14 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
-export const Header = styled.div`
+export const Header = styled.h2`
   padding: ${spacing};
   text-align: center;
   color: white;
+
+  @media (max-width: 700px) {
+    color: red;
+  }
 `;
 
 export const LabelContainer = styled.div`
@@ -18,7 +22,7 @@ export const LabelContainer = styled.div`
   align-items: center;
 `;
 
-export const Label = styled.div`
+export const Label = styled.label`
   padding: ${spacing};
   text-align: center;
 `;
