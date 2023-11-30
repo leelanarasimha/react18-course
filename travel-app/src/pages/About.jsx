@@ -1,3 +1,10 @@
+import PageNav from '../components/PageNav';
+
 export default function About() {
-  return <div>About Page</div>;
+  return (
+    <>
+      <PageNav />
+      <div>About Page</div>
+    </>
+  );
 }
