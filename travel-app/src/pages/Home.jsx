@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <PageNav />
-      <div>Home Page</div>
+      <h1 className="test">Home Page</h1>
     </>
   );
 }

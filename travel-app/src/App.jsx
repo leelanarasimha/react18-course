@@ -5,6 +5,7 @@ import Product from './pages/Product';
 import About from './pages/About';
 import PageNotFound from './pages/PageNotFound';
 import PageNav from './components/PageNav';
+import AppLayout from './pages/AppLayout';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="product" element={<Product />} />
           <Route path="about" element={<About />} />
+          <Route path="app" element={<AppLayout />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
