@@ -1,0 +1,7 @@
+.appContainer {
+  display: flex;
+}
+
+.appContainer > div {
+  flex: 1;
+}

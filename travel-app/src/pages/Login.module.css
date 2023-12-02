@@ -1,0 +1,16 @@
+.login {
+  width: 40%;
+  margin: auto;
+}
+
+.login h1 {
+  color: red;
+}
+
+.login input {
+  width: 100%;
+}
+
+.marginTop {
+  margin-top: 10px;
+}
