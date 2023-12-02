@@ -1,4 +1,25 @@
 .sidebar {
   background-color: lightgrey;
   height: 100vh;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 20px 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar ul li a {
+  display: inline-block;
+  padding: 5px 10px;
+  text-decoration: none;
+  background-color: grey;
+  color: white;
+}
+
+.sidebar ul li :global(.active) {
+  background-color: blueviolet;
 }
