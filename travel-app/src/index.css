@@ -6,3 +6,11 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}

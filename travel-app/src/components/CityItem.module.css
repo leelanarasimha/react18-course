@@ -1,0 +1,19 @@
+.city {
+  display: flex;
+  background-color: grey;
+  margin: 5px 0px;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.city > div {
+  padding: 5px;
+}
+
+.deleteButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
