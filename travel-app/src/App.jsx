@@ -8,6 +8,7 @@ import PageNotFound from './pages/PageNotFound';
 import AppLayout from './pages/AppLayout';
 import Login from './pages/Login';
 import CitiesList from './pages/CitiesList';
+import CountryList from './pages/CountryList';
 
 function App() {
   const [cities, setCities] = useState([]);
@@ -41,7 +42,7 @@ function App() {
           <Route path="app" element={<AppLayout />}>
             <Route index element={<CitiesList cities={cities} loading={loading} />} />
             <Route path="cities" element={<CitiesList cities={cities} loading={loading} />} />
-            <Route path="countries" element={<div>Countries list</div>} />
+            <Route path="countries" element={<CountryList cities={cities} loading={loading} />} />
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>

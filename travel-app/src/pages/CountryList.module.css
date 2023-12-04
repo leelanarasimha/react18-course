@@ -1,0 +1,4 @@
+.countryList {
+  display: flex;
+  flex-wrap: wrap;
+}
