@@ -7,7 +7,10 @@ export default function CityItem({ city }) {
     city: PropTypes.object.isRequired
   };
   return (
-    <Link to={`/app/cities/${city.id}`} className={styles.cityLink}>
+    <Link
+      to={`/app/cities/${city.id}?lat=${city.latitude}&long=${city.longitude}`}
+      className={styles.cityLink}
+    >
       <div className={styles.city}>
         <div className="d-flex align-items-center">
           <div>{city.emoji_flag}</div>

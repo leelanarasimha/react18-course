@@ -3,6 +3,7 @@ import Loader from '../components/Loader';
 import CityItem from '../components/CityItem';
 import Message from '../components/Message';
 import styles from './CitiesList.module.css';
+import { useSearchParams } from 'react-router-dom';
 
 export default function CitiesList({ cities, loading }) {
   CitiesList.propTypes = {
