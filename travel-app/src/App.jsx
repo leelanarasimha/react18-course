@@ -9,7 +9,7 @@ import AppLayout from './pages/AppLayout';
 import Login from './pages/Login';
 import CitiesList from './pages/CitiesList';
 import CountryList from './pages/CountryList';
-import CityDetails from './pages/cityDetails';
+import CityDetails from './pages/CityDetails';
 import AddCity from './pages/AddCity';
 import { CityProvider } from './contexts/CityContext';
 
