@@ -1,4 +1,7 @@
-export default function CounterButtons({ increment, decrement, reset }) {
+import { useCounter } from './CounterContext';
+
+export default function CounterButtons() {
+  const { increment, decrement, reset } = useCounter();
   return (
     <div>
       <button onClick={increment}>Increment</button>

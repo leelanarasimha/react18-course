@@ -3,25 +3,13 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import Counter from './Counter';
+import { CounterProvider } from './CounterContext';
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  function increment() {
-    setCount((count) => count + 1);
-  }
-  function decrement() {
-    setCount((count) => count - 1);
-  }
-
-  function reset() {
-    setCount(0);
-  }
-
   return (
-    <>
-      <Counter count={count} increment={increment} decrement={decrement} reset={reset} />
-    </>
+    <CounterProvider>
+      <Counter />
+    </CounterProvider>
   );
 }
 
