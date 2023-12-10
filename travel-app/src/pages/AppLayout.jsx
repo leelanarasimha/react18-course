@@ -1,4 +1,4 @@
-import MapContainer from '../components/MapContainer';
+import Map from '../components/Map';
 import Sidebar from '../components/Sidebar';
 import styles from './AppLayout.module.css';
 
@@ -9,7 +9,7 @@ export default function AppLayout() {
         <Sidebar />
       </div>
       <div>
-        <MapContainer />
+        <Map />
       </div>
     </div>
   );
