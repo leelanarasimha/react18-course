@@ -37,11 +37,31 @@ export const CityProvider = ({ children }) => {
     }
   }
 
+  async function setCity(city) {
+    try {
+      setLoading(true);
+      let response = await fetch(`${citiesUrl}`, {
+        method: 'POST',
+        body: JSON.stringify(city),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      let data = await response.json();
+      setCities((cities) => [...cities, data]);
+    } catch (e) {
+      console.log(e);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   let values = {
     cities,
     loading,
     getCity,
-    currentCity
+    currentCity,
+    setCity
   };
 
   return <cityContext.Provider value={values}>{children}</cityContext.Provider>;

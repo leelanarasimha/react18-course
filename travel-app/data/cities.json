@@ -44,6 +44,42 @@
       "longitude": 151.2093,
       "emoji_flag": "🇦🇺",
       "date": "2023-12-02"
+    },
+    {
+      "name": "Getafe",
+      "country": "Spain",
+      "latitude": "40.299794642915124",
+      "longitude": "-3.726926619160592",
+      "emoji_flag": "ES",
+      "date": "12/30/2023",
+      "id": 6
+    },
+    {
+      "name": "Vierzon",
+      "country": "France",
+      "latitude": "47.240102231560776",
+      "longitude": "2.058658442260928",
+      "emoji_flag": "FR",
+      "date": "12/30/2023",
+      "id": 7
+    },
+    {
+      "name": "Birmingham",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "latitude": "52.45663694769385",
+      "longitude": "-1.8524476603067865",
+      "emoji_flag": "GB",
+      "date": "12/30/2023",
+      "id": 8
+    },
+    {
+      "name": "Leeds",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "latitude": "53.76796806119059",
+      "longitude": "-1.5103174675606004",
+      "emoji_flag": "GB",
+      "date": "12/30/2023",
+      "id": 9
     }
   ]
 }
