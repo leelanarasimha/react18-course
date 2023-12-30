@@ -4,9 +4,16 @@ import { Link } from 'react-router-dom';
 import { useCity } from '../contexts/CityContext';
 
 export default function CityItem({ city }) {
+  const { deleteCity } = useCity();
   CityItem.propTypes = {
     city: PropTypes.object.isRequired
   };
+
+  function handleDelete(e) {
+    e.preventDefault();
+    console.log('test');
+    deleteCity(city.id);
+  }
 
   const { currentCity } = useCity();
   return (
@@ -20,7 +27,9 @@ export default function CityItem({ city }) {
           <div>{city.name}</div>
         </div>
         <div>
-          <button className={styles.deleteButton}>&times;</button>
+          <button className={styles.deleteButton} onClick={handleDelete}>
+            &times;
+          </button>
         </div>
       </div>
     </Link>

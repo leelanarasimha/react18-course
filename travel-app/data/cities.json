@@ -28,24 +28,6 @@
       "date": "2023-12-02"
     },
     {
-      "id": 4,
-      "name": "Tokyo",
-      "country": "Japan",
-      "latitude": 35.6895,
-      "longitude": 139.6917,
-      "emoji_flag": "🇯🇵",
-      "date": "2023-12-02"
-    },
-    {
-      "id": 5,
-      "name": "Sydney",
-      "country": "Australia",
-      "latitude": -33.8688,
-      "longitude": 151.2093,
-      "emoji_flag": "🇦🇺",
-      "date": "2023-12-02"
-    },
-    {
       "name": "Getafe",
       "country": "Spain",
       "latitude": "40.299794642915124",
@@ -64,15 +46,6 @@
       "id": 7
     },
     {
-      "name": "Birmingham",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "latitude": "52.45663694769385",
-      "longitude": "-1.8524476603067865",
-      "emoji_flag": "GB",
-      "date": "12/30/2023",
-      "id": 8
-    },
-    {
       "name": "Leeds",
       "country": "United Kingdom of Great Britain and Northern Ireland (the)",
       "latitude": "53.76796806119059",
@@ -80,6 +53,15 @@
       "emoji_flag": "GB",
       "date": "12/30/2023",
       "id": 9
+    },
+    {
+      "name": "Alicante",
+      "country": "Spain",
+      "latitude": "38.32500123899491",
+      "longitude": "-0.4948350277176506",
+      "emoji_flag": "ES",
+      "date": "12/30/2023",
+      "id": 10
     }
   ]
 }
